@@ -1,10 +1,10 @@
-package red01.dominio;
+package red.dominio;
 
-public class Aparato {
+public class Device {
     private boolean status;
     private final int consumption;
 
-    public Aparato(int consumption) {
+    public Device(int consumption) {
         this.consumption = consumption;
     }
 

@@ -36,5 +36,6 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="red01" scope="TEST" />
+    <orderEntry type="module" module-name="red02" scope="TEST" />
   </component>
 </module>

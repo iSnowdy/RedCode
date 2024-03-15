@@ -1,4 +1,4 @@
-package red01.main;
+package red.main;
 
 public class Main {
     public static void main(String[] args) {

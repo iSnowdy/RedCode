@@ -1,4 +1,4 @@
-package red.dominio;
+package red01.dominio;
 
 public class Aparato {
     private boolean turnOn;

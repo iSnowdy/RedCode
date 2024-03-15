@@ -1,4 +1,4 @@
-package red.dominio;
+package red01.dominio;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 

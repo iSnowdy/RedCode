@@ -1,5 +1,5 @@
-package red.main;
-import red.dominio.Aparato;
+package red01.main;
+import red01.dominio.Aparato;
 
 public class Main {
     public static void main(String[] args) {

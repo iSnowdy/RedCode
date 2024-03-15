@@ -1,3 +1,5 @@
+package red01.dominio;
+
 public class Aparato {
     private boolean status;
     private final int consumption;
@@ -16,6 +18,10 @@ public class Aparato {
     public int getConsumption() {
         return consumption;
     }
-
-
+    public int getCurrentConsumption() { // Only if the device is turned on, it will consume energy
+        if (status) {
+            return consumption;
+        }
+        return 0;
+    }
 }

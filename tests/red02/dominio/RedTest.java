@@ -25,9 +25,9 @@ public class RedTest {
 
     @Test
     void testAddDevice() {
-        Device device = new Device(100);
         Red network = new Red(1000);
-        network.addDevice(device);
+        Device TV = new Device(100);
+        network.addDevice(TV);
         assertEquals(1, network.amountOfDevices());
     }
     @Test
@@ -35,7 +35,8 @@ public class RedTest {
         Device device = new Device(100);
         Red network = new Red(1000);
         network.addDevice(device);
-        device.setStatus(true); // It must be on so it has any consumption
+        device.setStatus(true); // It must be on so it has consumption
         assertEquals(100, network.getCurrentConsumption());
+        assertTrue(network.isStable()); // If the max is 1000 and we are using 100, it must be True (it is stable)
     }
 }

@@ -2,16 +2,16 @@ package red.dominio;
 
 public class Device {
     private boolean status;
-    private final int consumption;
+    private final int consumption; // We assume that the consumption of a device won't change over time
 
-    public Device(int consumption) {
-        this.consumption = consumption;
+    public Device(int consumption) { // Now we do have a constructor
+        this.consumption = consumption; // This will allow the declaration of consumption as final
     }
 
     public boolean isStatus() {
         return status;
     }
-    public void setStatus(boolean status) {
+    public void setStatus(boolean status) { // We've joined the turnOn and turnOff methods in one using a boolean as input
         this.status = status;
     }
 

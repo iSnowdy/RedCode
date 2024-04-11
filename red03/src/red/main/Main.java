@@ -1,8 +1,6 @@
 package red.main;
 
-import red.dominio.Device3;
-import red.dominio.Network;
-import red.dominio.SecuritySystem;
+import red.dominio.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -12,7 +10,7 @@ public class Main {
 
         System.out.println(TV);
 
-        System.out.println("----------");
+        System.out.println("--------------------");
 
         Network network = new Network(300);
         network.addDevice(TV);
@@ -23,12 +21,33 @@ public class Main {
         Oven.setStatus(true);
         PC.setStatus(true);
 
-        network.getCurrentConsumption();
-        network.amountOfDevices();
-        network.isStable();
+        System.out.println("The current consumption of this network is: " + network.getCurrentConsumption());
+        System.out.println("How many devices do we have on this network? " + network.amountOfDevices());
+        System.out.println("Is this network stable? " + network.isStable());
 
-        SecuritySystem security = new SecuritySystem(network);
+        /*
+        System.out.println("--------------------");
+        System.out.println("Non abstract Securiy System");
 
+        SecuritySystemOG security = new SecuritySystemOG(network);
         security.doSomething();
+        */
+
+
+        System.out.println("--------------------");
+        System.out.println("Basic Abstract Security System");
+
+        SecuritySystem secSystem = new SecSystemBasic(network);
+        secSystem.actualStatus();
+
+
+        /*
+        System.out.println("--------------------");
+        System.out.println("Comparison Abstract Security System");
+
+        SecuritySystem secSystemComparison = new SecuritySystemCompare(network);
+        secSystemComparison.actualStatus();
+
+         */
     }
 }

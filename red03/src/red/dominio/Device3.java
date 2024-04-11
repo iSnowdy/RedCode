@@ -27,9 +27,13 @@ public class Device3 {
         return 0;
     }
 
+    public String getDeviceName () {
+        return name;
+    }
+
     @Override
     public String toString() {
-        return "Device name " + name + ".\nIt has a consumption of: "
-                + consumption + "\nIs it on? (" + status + ")";
+        return name + " has a consumption of: "
+                + consumption + "\nIs it on? (" + status + ") \n";
     }
 }

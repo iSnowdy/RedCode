@@ -5,25 +5,25 @@ import java.util.Collection;
 import java.util.List;
 
 public class Network {
-    private final List<Device3> device3s;
+    private final List<Device3> devices;
     private final int maxPower;
 
     public Network(int maxPower) {
-        this.device3s = new ArrayList<Device3>();
+        this.devices = new ArrayList<Device3>();
         this.maxPower = maxPower;
     }
 
-    public void addDevice(Device3 device3) {
-        device3s.add(device3);
+    public void addDevice(Device3 device) {
+        devices.add(device);
     }
     public int amountOfDevices() {
-        return device3s.size();
+        return devices.size();
     }
 
     public int getCurrentConsumption() {
         int currentConsumption = 0;
 
-        for (Device3 device3 : device3s) currentConsumption += device3.getCurrentConsumption();
+        for (Device3 device : devices) currentConsumption += device.getCurrentConsumption();
 
         return currentConsumption;
     }
@@ -32,6 +32,6 @@ public class Network {
     }
 
     public Collection<Device3> getDevices() {
-        return device3s;
+        return devices;
     }
 }

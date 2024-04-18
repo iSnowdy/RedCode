@@ -1,3 +1,5 @@
+/*
+
 package red.main;
 
 import red.dominio.*;
@@ -29,7 +31,7 @@ public class Main {
         System.out.println("How many devices do we have on this network? " + network.amountOfDevices());
         System.out.println("Is this network stable? " + network.isStable());
 
-
+        /*
         System.out.println("--------------------");
         System.out.println("Basic Abstract Security System");
 
@@ -38,13 +40,18 @@ public class Main {
 
         System.out.println("Final state:\n" + network);
 
-        /*
+
         System.out.println("--------------------");
         System.out.println("Comparison Abstract Security System");
 
-        SecuritySystem secSystemComparison = new SecuritySystemCompare(network);
-        secSystemComparison.actualStatus();
+        SecuritySystem comparisonSystem = new SecuritySystemCompare(network, new Alarm());
+        comparisonSystem.actualStatus();
 
-         */
+        // System.out.println("Is the network stable? " + network.isStable());
+        // System.out.println("Final status: " + network);
+
+
     }
 }
+
+*/

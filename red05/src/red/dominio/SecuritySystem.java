@@ -1,36 +1,38 @@
 package red.dominio;
 
-public class SecuritySystemOG {
+import java.util.List;
+
+public abstract class SecuritySystem {
     // We can not instance classes that are abstract (meaning we can't do 'new ...')
     // It will have at least one class that will only be the header (class name). Without a body.
     // This class without a body will be able to do something thanks to a child class that will extend the
     // abstract class
 
+    protected Network network;
+    protected Alarm alarm;
 
-    private Network network; // Although it could be protected as well
-
-    public SecuritySystemOG(Network network) {
-        // Our security system will overview a power network. So its
-        // constructor must receive as data input the network itself
+    public SecuritySystem (Network network, Alarm alarm) {
         this.network = network;
+        this.alarm = alarm;
     }
 
-    // This method will simply shut down the first device it founds if we are over the maximum power
-
-    public boolean doSomething () {
+    public boolean actualStatus () {
         System.out.println("Initializing the network's Security System");
 
-        for (Device4 device : network.getDevices()) { // New method in network
+        for (Device5 device : getDevicesSystem()) { // New method in network
             if (network.isStable()) {
                 System.out.println("All gucci. Go on");
                 break;
             }
             System.out.println("The " + device.getDeviceName() + " will shut down due to lack of power supply");
-            device.setStatus(false);
+            device.turnOffRequest();
         }
 
-
+        boolean networkStatus = network.isStable();
+        if (!networkStatus) alarm.activate();
 
         return network.isStable();
     }
+
+    protected abstract List<Device5> getDevicesSystem();
 }

@@ -19,7 +19,7 @@ public abstract class SecuritySystem {
     public boolean actualStatus () {
         System.out.println("Initializing the network's Security System");
 
-        for (Device4 device : network.getDevices()) { // New method in network
+        for (Device4 device : getDevicesSystem()) { // New method in network
             if (network.isStable()) {
                 System.out.println("All gucci. Go on");
                 break;
